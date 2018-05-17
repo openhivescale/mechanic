@@ -367,10 +367,10 @@ module cadreInf(animation=[0,1,2,3,4,5,6,7,8,9,10,11]) {
         for (x=[x308-10,x309+10]) {
             translate([x,largeur-l308309-2+8,2]) rotate([180,0,0]) screwNut(4,10,4);
         }
-        
-        translate([x309+2,largeur-90,6]) cube([100,68,50]);
-        
-        
+    }
+    
+    if (search(12,animation)) {        
+        translate([x309+2,largeur-90,6]) cube([100,68,50]);        
     }
         
  

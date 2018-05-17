@@ -67,8 +67,8 @@ module laserParts() {
     translate([270,100,0]) legend("216");
     translate([340,100,0]) rotate([0,0,-180]) laser216();
     
-    translate([270,50,0]) legend("251");
-    translate([340,60,0]) rotate([0,0,-180]) laser251();
+    //translate([270,50,0]) legend("251");
+    //translate([340,60,0]) rotate([0,0,-180]) laser251();
 
     translate([270,10,0]) legend("252");
     translate([330,15,0]) laser252();
@@ -77,46 +77,64 @@ module laserParts() {
     translate([430,140,0]) legend("281");
     translate([440,60,0]) rotate([0,0,90]) laser281();
         
+        
+    translate([430,300,0]) legend("601");
+    translate([440,280,0]) rotate([-60,0,0]) rotate([0,0,-45]) printed601();        
+
+    translate([430,240,0]) legend("602");
+    translate([440,220,0]) rotate([-60,0,0]) rotate([0,0,-45]) printed602();            
 }
 
 
 module profiles() {
     
     translate([-10,-30,0]) legend("301");
+    translate([-10,-50,0]) legend("x4");
     translate([0,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-longueur,0,0]) profile301();
     
     translate([30,-30,0]) legend("302");
+    translate([30,-50,0]) legend("x4");
     translate([40,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-largeur,0,0]) profile302();
     
     translate([70,-30,0]) legend("303");
+    translate([70,-50,0]) legend("x1");
     translate([80,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-l303304,0,0]) profile303();
     
     translate([110,-30,0]) legend("304");
+    translate([110,-50,0]) legend("x1");
     translate([120,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-l303304,0,0]) profile304();
     
     translate([150,-30,0]) legend("308");
+    translate([150,-50,0]) legend("x1");
     translate([160,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-l308309,0,0]) profile308();
     
     translate([190,-30,0]) legend("309");
+    translate([190,-50,0]) legend("x1");
     translate([200,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([30,0,0]) translate([-l308309,0,0]) profile309();
     
     translate([245,-30,0]) legend("305");
+    translate([245,-50,0]) legend("x1");
     translate([280,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([120,0,0]) translate([-lBrasSecondaire,-0,0]) profile305();
     
     translate([295,-30,0]) legend("306");
+    translate([295,-50,0]) legend("x1");
     translate([330,0,0]) rotate([-30,0,0]) rotate([0,0,-100]) rotate([120,0,0]) translate([-lBrasSecondaire,0,0]) profile306();
     
     
     translate([350,-30,0]) legend("311");
+    translate([350,-50,0]) legend("x1");
     translate([380,0,0]) rotate([-30,0,0]) rotate([-30,0,80]) tube311();
     
     translate([390,-30,0]) legend("312");
+    translate([390,-50,0]) legend("x2");
     translate([420,0,0]) rotate([-30,0,0]) rotate([-30,0,80]) tube312();
     
     translate([430,-30,0]) legend("313");
+    translate([430,-50,0]) legend("x1");
     translate([460,0,0]) rotate([-30,0,0]) rotate([-30,0,80]) tube313();
     
     translate([470,-30,0]) legend("314");
+    translate([470,-50,0]) legend("x2");
     translate([500,0,0]) rotate([-30,0,0]) rotate([-30,0,80]) tube314();
     
     
@@ -145,7 +163,7 @@ module legend(t) {
 legendStep = 20;
 xLegend = -160;
 yLegend = 300;
-
+//assemblyStep13();
 module serflexMontage(l1 = 22, h = 20) {
     difference() {
         union() {
@@ -288,12 +306,14 @@ module assemblyStep2() {
 module assemblyStep3() {
     translate([xLegend+40,yLegend,0]) legendCircle(3);
     translate([xLegend,yLegend-50-1*legendStep,0]) legend("101 x4");
-    translate([xLegend,yLegend-50-2*legendStep,0]) legend("M4x10 x14");
+    translate([xLegend,yLegend-50-2*legendStep,0]) legend("308");
+    translate([xLegend,yLegend-50-3*legendStep,0]) legend("309");
+    translate([xLegend,yLegend-50-4*legendStep,0]) legend("M4x10 x14");
     
-    translate([xLegend+15,yLegend-50-4*legendStep,0]) legend("!!!!!!");
-    translate([xLegend,yLegend-50-6*legendStep,0]) laser101();
-    translate([xLegend+30,yLegend-50-6*legendStep,0]) legend("!=");
-    translate([xLegend+90,yLegend-50-6*legendStep,0]) rotate([0,180,0]) laser101();
+    translate([xLegend+15,yLegend-50-6*legendStep,0]) legend("!!!!!!");
+    translate([xLegend,yLegend-50-8*legendStep,0]) laser101();
+    translate([xLegend+30,yLegend-50-8*legendStep,0]) legend("!=");
+    translate([xLegend+90,yLegend-50-8*legendStep,0]) rotate([0,180,0]) laser101();
 
 
     
@@ -625,7 +645,9 @@ module assemblyStep9() {
 module assemblyStep10() {
     yLegend = 200;
     translate([xLegend+40,yLegend,0]) legendCircle(10);
-    translate([xLegend,yLegend-50-1*legendStep,0]) legend("M5x12 x2");
+    translate([xLegend,yLegend-50-1*legendStep,0]) legend("10mm shaft");
+    translate([xLegend,yLegend-50-2*legendStep,0]) legend("SK10 (shaft support) x2");
+    translate([xLegend,yLegend-50-3*legendStep,0]) legend("M5x12 x2");
     
 
     
@@ -716,7 +738,7 @@ module assemblyStep13() {
     translate([xLegend,yLegend-50-2*legendStep,0]) legend("M4x10 x2");  
      
     translate([20,190,0]) rotate([-60,0,0]) rotate([0,0,-45]) {              
-        cadreInf([0,1,2,3,4,5,6,7,8,9,20]);
+        cadreInf([0,1,2,3,4,5,6,7,8,9,10,20]);
         brasSecondaire();
     }
    
@@ -724,7 +746,7 @@ module assemblyStep13() {
     translate([-50,172,0]) 
     intersection() {
         rotate([-66.5,0,0]) rotate([0,0,-100.8]) {        
-            cadreInf([0,1,2,3,4,5,6,7,8,9,20]);
+            cadreInf([0,1,2,3,4,5,6,7,8,9,10,20]);
             brasSecondaire([10]);
         }
         translate([30,-170,100]) cube([250,100,500]);
@@ -747,7 +769,7 @@ module assemblyStep14() {
     rotate([-45,0,0]) rotate([0,0,-270])
     {      
         
-        cadreInf([0,1,2,3,4,5,6,7,8,9]);
+        cadreInf([0,1,2,3,4,5,6,7,8,9,10]);
         brasSecondaire();
             
     }
@@ -781,12 +803,14 @@ module assemblyStep15() {
 module assemblyStep16() {
     
     translate([xLegend+40,yLegend,0]) legendCircle(16);
-    translate([xLegend,yLegend-50-1*legendStep,0]) legend("103");
-    translate([xLegend,yLegend-50-2*legendStep,0]) legend("106 x2");
-    translate([xLegend,yLegend-50-3*legendStep,0]) legend("201 x4");
-    translate([xLegend,yLegend-50-4*legendStep,0]) legend("215 x2");
-    translate([xLegend,yLegend-50-5*legendStep,0]) legend("M4x30 x8");
-    translate([xLegend,yLegend-50-6*legendStep,0]) legend("washer M4 x10");
+    translate([xLegend,yLegend-50-1*legendStep,0]) legend("311");
+    translate([xLegend,yLegend-50-2*legendStep,0]) legend("312");
+    translate([xLegend,yLegend-50-3*legendStep,0]) legend("103");
+    translate([xLegend,yLegend-50-4*legendStep,0]) legend("106 x2");
+    translate([xLegend,yLegend-50-5*legendStep,0]) legend("201 x4");
+    translate([xLegend,yLegend-50-6*legendStep,0]) legend("215 x2");
+    translate([xLegend,yLegend-50-7*legendStep,0]) legend("M4x30 x8");
+    translate([xLegend,yLegend-50-8*legendStep,0]) legend("washer M4 x10");
     
     
     
@@ -851,15 +875,17 @@ module assemblyStep16() {
 module assemblyStep17() {
     
     translate([xLegend+40,yLegend,0]) legendCircle(17);
-    translate([xLegend,yLegend-50-1*legendStep,0]) legend("104");
-    translate([xLegend,yLegend-50-2*legendStep,0]) legend("106 x2");
-    translate([xLegend,yLegend-50-3*legendStep,0]) legend("201 x4");
-    translate([xLegend,yLegend-50-4*legendStep,0]) legend("208");
-    translate([xLegend,yLegend-50-5*legendStep,0]) legend("209");
-    translate([xLegend,yLegend-50-6*legendStep,0]) legend("215 x2");
-    translate([xLegend,yLegend-50-7*legendStep,0]) legend("M4x30 x8");
-    translate([xLegend,yLegend-50-8*legendStep,0]) legend("M4x25 x2");
-    translate([xLegend,yLegend-50-9*legendStep,0]) legend("washer M4 x10");
+    translate([xLegend,yLegend-50-1*legendStep,0]) legend("313");
+    translate([xLegend,yLegend-50-2*legendStep,0]) legend("314");
+    translate([xLegend,yLegend-50-3*legendStep,0]) legend("104");
+    translate([xLegend,yLegend-50-4*legendStep,0]) legend("106 x2");
+    translate([xLegend,yLegend-50-5*legendStep,0]) legend("201 x4");
+    translate([xLegend,yLegend-50-6*legendStep,0]) legend("208");
+    translate([xLegend,yLegend-50-7*legendStep,0]) legend("209");
+    translate([xLegend,yLegend-50-8*legendStep,0]) legend("215 x2");
+    translate([xLegend,yLegend-50-9*legendStep,0]) legend("M4x30 x8");
+    translate([xLegend,yLegend-50-10*legendStep,0]) legend("M4x25 x2");
+    translate([xLegend,yLegend-50-11*legendStep,0]) legend("washer M4 x10");
     
     
     
@@ -940,17 +966,11 @@ module assemblyStep18() {
     
     translate([0,190,0]) rotate([-60,0,0]) rotate([0,0,-45]) {      
         
-        cadreInf([0,1,2,3,4,5,6,7,8,9]);
+        cadreInf([0,1,2,3,4,5,6,7,8,9,10]);
         brasSecondaire();
         assemblageTriangle2([0,2,3,4,5,6,7,8,14]);
         assemblageTriangle1([0,2,3,4,5,6,7,12]);
-        
-        
-        
 
-
-         
-     
         
         translate([longueur-xCouteauInferieur, largeur-epaisseurTole, zPlateau/2]) rotate([0,0,180]) assemblageContreCouteau(0,[20]);
         translate([longueur-xCouteauInferieur, epaisseurTole, zPlateau/2]) rotate([0,0,180]) assemblageContreCouteau(1,[20]);    
@@ -961,10 +981,7 @@ module assemblyStep18() {
         
         
     }
-    
-    
-    
-    
+
     translate([550,350,0]) {
         linear_extrude(1) {
             difference() {
@@ -1004,14 +1021,16 @@ module assemblyStep18() {
 module assemblyStep19() {
     
     translate([xLegend+40,yLegend,0]) legendCircle(19);
-    translate([xLegend,yLegend-50-1*legendStep,0]) legend("103");
-    translate([xLegend,yLegend-50-2*legendStep,0]) legend("104");
-    translate([xLegend,yLegend-50-3*legendStep,0]) legend("208");
-    translate([xLegend,yLegend-50-4*legendStep,0]) legend("209");
-    translate([xLegend,yLegend-50-5*legendStep,0]) legend("215 x4");
-    translate([xLegend,yLegend-50-6*legendStep,0]) legend("M4x30 x8");
-    translate([xLegend,yLegend-50-7*legendStep,0]) legend("M4x25 x2");
-    translate([xLegend,yLegend-50-8*legendStep,0]) legend("washer M4 x20");
+    translate([xLegend,yLegend-50-1*legendStep,0]) legend("312");
+    translate([xLegend,yLegend-50-2*legendStep,0]) legend("314");
+    translate([xLegend,yLegend-50-3*legendStep,0]) legend("103");
+    translate([xLegend,yLegend-50-4*legendStep,0]) legend("104");
+    translate([xLegend,yLegend-50-5*legendStep,0]) legend("208");
+    translate([xLegend,yLegend-50-6*legendStep,0]) legend("209");
+    translate([xLegend,yLegend-50-7*legendStep,0]) legend("215 x4");
+    translate([xLegend,yLegend-50-8*legendStep,0]) legend("M4x30 x8");
+    translate([xLegend,yLegend-50-9*legendStep,0]) legend("M4x25 x2");
+    translate([xLegend,yLegend-50-10*legendStep,0]) legend("washer M4 x20");
     
     
     
@@ -1088,7 +1107,7 @@ module assemblyStep20() {
   
     
     translate([660,160,0]) rotate([-60,0,0]) rotate([0,0,-45]) rotate([0,0,180]){    
-        cadreInf([0,1,2,3,4,5,6,7,8,9,11]);
+        cadreInf([0,1,2,3,4,5,6,7,8,9,,10,11]);
         brasSecondaire();
         assemblageTriangle1([0,1,2,3,4,5,6,7,12]);
         assemblageTriangle2([0,1,2,3,4,5,6,7,8,14]);
@@ -1119,7 +1138,7 @@ module assemblyStep21() {
   
     
     translate([660,160,0]) rotate([-60,0,0]) rotate([0,0,-45]) rotate([0,0,180]){    
-        cadreInf([0,1,2,3,4,5,6,7,8,9,11]);
+        cadreInf([0,1,2,3,4,5,6,7,8,9,10,11]);
         brasSecondaire();
         assemblageTriangle1([0,2,3,4,5,6,7,8,9,10,11,12,21,22]);
         assemblageTriangle2([0,2,3,4,5,6,7,8,9,10,11,12,13,14,21,22]);
